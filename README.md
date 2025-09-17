@@ -137,3 +137,38 @@ python chat.py
 }
 
 ```
+
+### Authentication Token
+- **POST** `/auth/token`
+- **Parameters**:
+  - `client_name`: Name of the client (default: "default_client")
+  - `expires_hours`: Token validity in hours (default: 168, max: 720)
+
+### Authentication Response Format
+```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "token_type": "bearer",
+  "expires_in_hours": 168,
+  "client": "default_client"
+}
+```
+
+### Error Responses
+```json
+{
+  "detail": "Maximum token expiration is 720 hours (30 days)"
+}
+```
+OR
+```json
+{
+  "detail": "Minimum token expiration is 1 hour"
+}
+```
+
+### Using the Token
+Include the token in subsequent requests:
+```http
+Authorization: Bearer eyJhxxxxxxxxxxxxxxJ9...
+```
