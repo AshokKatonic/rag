@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+langchain
+langchain-openai
+langchain-community
+python-dotenv
+numpy
+azure-cosmos
+playwright
+beautifulsoup4
+html2text
+nest-asyncio
+PyJWT
+python-multipart
